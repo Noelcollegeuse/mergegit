@@ -1,0 +1,24 @@
+git init
+echo "Line from main" > file.txt
+git add file.txt
+git commit -m "Initial commit on main branch"
+git checkout -b feature-branch1
+git checkout -b feature-branch2
+git checkout feature-branch1
+echo "Conflict line from branch1" >> file.txt
+git add file.txt
+git commit -m "Change from feature-branch1"
+git checkout feature-branch2
+echo "Conflict line from branch2" >> file.txt
+git add file.txt
+git commit -m "Change from feature-branch2"
+git checkout feature-branch1
+git merge feature-branch2
+echo "Resolved line from both branches" > file.txt
+git add file.txt
+git commit -m "Resolved merge conflict between branch1 and branch2"
+
+
+
+
+
